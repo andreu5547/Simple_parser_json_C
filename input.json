@@ -1,0 +1,58 @@
+[
+   {
+      "name": "Serega Krokodil",
+      "age": 18,
+      "employed": 0,
+      "city": "New Moscow",
+      "mama": 1,
+      "papa": 3,
+      "physique": {
+         "height": 180,
+         "weight": 69
+      },
+      "cat_wife": 1,
+      "bowl_of_rice": 1
+   },
+   {
+      "name": "Andew CatChel",
+      "age": 18,
+      "employed": 1,
+      "city": "Moscow",
+      "mama": 10,
+      "papa": 9,
+      "physique": {
+         "height": 185,
+         "weight": 65
+      },
+      "cat_wife": 1,
+      "bowl_of_rice": -1
+   },
+   {
+      "name": "Cat wife",
+      "age": 300,
+      "employed": 0,
+      "city": "Yaponia",
+      "mama": 0,
+      "papa": 0,
+      "physique": {
+         "height": 150,
+         "weight": -10
+      },
+      "cat_wife": -1,
+      "bowl_of_rice": 1
+   },
+   {
+      "name": "Fox wife",
+      "age": 19,
+      "employed": 1,
+      "city": "Russia",
+      "mama": 1,
+      "papa": 1,
+      "physique": {
+         "height": 150,
+         "weight": 25
+      },
+      "cat_wife": 0,
+      "bowl_of_rice": 10
+   }
+]
