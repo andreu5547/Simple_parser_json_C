@@ -1,7 +1,7 @@
 # Building the Project with CMake
 ## Project Description
 
-This is a simple json file parser written in the C language. Use Parser <filename>
+This is a simple json file parser written in the C language. Use ```Parser <filename>```
 
 ## Dependencies
 
