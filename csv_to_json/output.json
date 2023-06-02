@@ -1,0 +1,50 @@
+[
+	{
+		"weight": "60",
+		"height": "180",
+		"bowl_of_rice": "1",
+		"cat_wife": "1",
+		"papa": "3",
+		"mama": "1",
+		"city": "New Moscow",
+		"employed": "0",
+		"age": "18",
+		"name": "Serega Kroko"
+	},
+	{
+		"weight": "65",
+		"height": "185",
+		"bowl_of_rice": "-1",
+		"cat_wife": "1",
+		"papa": "9",
+		"mama": "10",
+		"city": "Moscow",
+		"employed": "1",
+		"age": "18",
+		"name": "Andew CatChel"
+	},
+	{
+		"weight": "-10",
+		"height": "150",
+		"bowl_of_rice": "1",
+		"cat_wife": "-1",
+		"papa": "0",
+		"mama": "0",
+		"city": "Yaponia",
+		"employed": "0",
+		"age": "300",
+		"name": "Cat wife"
+	},
+	{
+		"weight": "25",
+		"height": "150",
+		"bowl_of_rice": "10",
+		"cat_wife": "0",
+		"papa": "1",
+		"mama": "1",
+		"city": "Russia",
+		"employed": "1",
+		"age": "19",
+		"name": "Fox wife"
+	}
+]

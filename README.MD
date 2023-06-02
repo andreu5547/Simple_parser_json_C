@@ -1,7 +1,7 @@
 # Building the Project with CMake
 ## Project Description
 
-This is a simple json file parser written in the C language. Use ```Parser <filename>```
+This is a simple json file parser written in the C language. Use ```Parser_<MODE> <filename>```
 
 ## Dependencies
 
@@ -17,7 +17,7 @@ Before starting the build process, you need to clone the repository to your loca
 
 ## Building the Project with CMake
 1. Navigate to the root directory of the project:
-   ```cd Simple_parser_json_C```
+   ```cd Simple_parser_json_C/<MODE>```
 2. Create a "build" directory:
    ```mkdir build```
 3. Navigate to the "build" directory:

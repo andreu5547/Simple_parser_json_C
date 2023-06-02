@@ -1,6 +1,6 @@
 [
    {
-      "name": "Serega Krokodil",
+      "name": "Serega Kroko",
       "age": 18,
       "employed": 0,
       "city": "New Moscow",
@@ -8,7 +8,7 @@
       "papa": 3,
       "physique": {
          "height": 180,
-         "weight": 69
+         "weight": 60
       },
       "cat_wife": 1,
       "bowl_of_rice": 1
