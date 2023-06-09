@@ -6,6 +6,13 @@
 #define MAX_KEYS_SIZE 128
 #define DELIMITER ";" // Разделитель, используемый с csv файлах
 
+void strip(char *string) {
+    for (int i = 0; string[i] != '\0'; ++i)
+        if (string[i] == '\n') {
+            string[i] = '\0';
+            break;
+        }
+}
 
 int main(int argc, char *argv[]) {
     // Открываем файл, переданный пользователем
@@ -58,12 +65,14 @@ int main(int argc, char *argv[]) {
         fprintf(jsonFile, "{\n\t\t");
 
         token = strtok(line, DELIMITER);
-        for (int i = 0; token != NULL && i < (keycnt - 1); i++) {
+        for (int i = 0; token != NULL && i < (keycnt); i++) {
+            strip(keys[i]);
+            strip(token);
             fprintf(jsonFile, "\"%s\": \"%s\"", keys[i], token);
 
             token = strtok(NULL, DELIMITER);
 
-            if (i < (keycnt - 2))
+            if (i < (keycnt - 1))
                 fprintf(jsonFile, ",\n\t\t");
         }
 
