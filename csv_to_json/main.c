@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #define MAX_DATA_SIZE 1024
 #define MAX_KEYS_SIZE 128
+#define DELIMITER ";" // Разделитель, используемый с csv файлах
 
 
 int main(int argc, char *argv[]) {
@@ -32,7 +34,6 @@ int main(int argc, char *argv[]) {
     int linecnt = 0;
 
     char *token;
-    const char *delimiter = ",";
 
     // Получаем строку с ключами и проверяем, что получили
     char keys_line[MAX_DATA_SIZE];
@@ -43,11 +44,11 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     // Разбиваем ключи по разделителю
-    token = strtok(keys_line, delimiter);
+    token = strtok(keys_line, DELIMITER);
     while (token != NULL) {
         keys[keycnt] = strdup(token);
         keycnt++;
-        token = strtok(NULL, delimiter);
+        token = strtok(NULL, DELIMITER);
     }
     // Записываем json файл
     fputs("[\n\t", jsonFile);
@@ -56,11 +57,11 @@ int main(int argc, char *argv[]) {
             fprintf(jsonFile, ",\n\t");
         fprintf(jsonFile, "{\n\t\t");
 
-        token = strtok(line, delimiter);
+        token = strtok(line, DELIMITER);
         for (int i = 0; token != NULL && i < (keycnt - 1); i++) {
             fprintf(jsonFile, "\"%s\": \"%s\"", keys[i], token);
 
-            token = strtok(NULL, delimiter);
+            token = strtok(NULL, DELIMITER);
 
             if (i < (keycnt - 2))
                 fprintf(jsonFile, ",\n\t\t");

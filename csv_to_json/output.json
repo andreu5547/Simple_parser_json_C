@@ -8,8 +8,7 @@
 		"mama": "1",
 		"city": "New Moscow",
 		"employed": "0",
-		"age": "18",
-		"name": "Serega Kroko"
+		"age": "18"
 	},
 	{
 		"weight": "65",
@@ -20,8 +19,7 @@
 		"mama": "10",
 		"city": "Moscow",
 		"employed": "1",
-		"age": "18",
-		"name": "Andew CatChel"
+		"age": "18"
 	},
 	{
 		"weight": "-10",
@@ -32,8 +30,7 @@
 		"mama": "0",
 		"city": "Yaponia",
 		"employed": "0",
-		"age": "300",
-		"name": "Cat wife"
+		"age": "300"
 	},
 	{
 		"weight": "25",
@@ -44,7 +41,6 @@
 		"mama": "1",
 		"city": "Russia",
 		"employed": "1",
-		"age": "19",
-		"name": "Fox wife"
+		"age": "19"
 	}
 ]

@@ -2,33 +2,38 @@
 #include <stdlib.h>
 #include "cJSON.h"
 
+#define DELIMITER ";" // Разделитель, используемый с csv файлах
+
 typedef struct {
     cJSON *json;
 } DataItem;
 
 // Рекурсивная функция записи заголовков
-void rec_write_header(cJSON *cjson, FILE *file) {
+void rec_write_header(cJSON *cjson, FILE *file, int end) {
     int flag = 1;
     if (cjson->child != NULL) {
         flag = 0;
-        rec_write_header(cjson->child, file);
+        rec_write_header(cjson->child, file, 0);
     }
     if (cjson->next != NULL) {
-        rec_write_header(cjson->next, file);
+        rec_write_header(cjson->next, file, 0);
     }
-    if (flag)
-        fprintf(file, "%s,", cjson->string);
+    if (flag) {
+        if (end)
+            fprintf(file, "%s", cjson->string);
+        else fprintf(file, "%s%s", cjson->string, DELIMITER);
+    }
 }
 
 // Рекурсивная функция записи основных данных
-void rec_write_data(cJSON *cjson, FILE *file) {
+void rec_write_data(cJSON *cjson, FILE *file, int end) {
     int flag = 1;
     if (cjson->child != NULL) {
         flag = 0;
-        rec_write_data(cjson->child, file);
+        rec_write_data(cjson->child, file, 0);
     }
     if (cjson->next != NULL) {
-        rec_write_data(cjson->next, file);
+        rec_write_data(cjson->next, file, 0);
     }
     if (flag) {
         if (cjson->type == cJSON_String) {
@@ -37,7 +42,8 @@ void rec_write_data(cJSON *cjson, FILE *file) {
             double value = cjson->valuedouble;
             fprintf(file, "%g", value);
         }
-        fprintf(file, ",");
+        if (!end)
+            fputs(DELIMITER, file);
     }
 }
 
@@ -103,12 +109,12 @@ int main(int argc, char *argv[]) {
     }
 
     // Записываем заголовки
-    rec_write_header(items[0].json->child, csvFile);
+    rec_write_header(items[0].json->child, csvFile, 1);
     fprintf(csvFile, "\n");
 
     // Записываем основные данные
     for (int i = 0; i < numItems; i++) {
-        rec_write_data(items[i].json->child, csvFile);
+        rec_write_data(items[i].json->child, csvFile, 1);
         fprintf(csvFile, "\n");
     }
 
